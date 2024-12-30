@@ -1,8 +1,8 @@
 crawler:
   start_urls:
-    - https://www.some.domain.com
+    - https://bulletin.stanford.edu/departments/MECHENGR/courses
   link_extractor:
-    allow: '.*some\.domain.*'
+    allow: '.*bulletin\.stanford.*'
     deny:
       - "#"
       - '\?'
