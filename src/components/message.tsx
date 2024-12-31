@@ -2,7 +2,7 @@ import React from "react";
 import Markdown from "markdown-to-jsx";
 import cx from "@/utils/cx";
 import { Message as MessageProps } from "ai/react";
-import UpstashLogo from "@/components/upstash-logo";
+import PhysLogo from "@/components/phys-logo";
 import { IconUser } from "@tabler/icons-react";
 
 const Message: React.FC<MessageProps> = ({ content, role }) => {
@@ -12,7 +12,7 @@ const Message: React.FC<MessageProps> = ({ content, role }) => {
     <article
       className={cx(
         "mb-4 flex items-start gap-4 p-4 md:p-5 rounded-2xl",
-        isUser ? "" : "bg-emerald-50",
+        isUser ? "" : "bg-gray-700 text-amber-500",
       )}
     >
       <Avatar isUser={isUser} />
@@ -42,11 +42,11 @@ const Avatar: React.FC<{ isUser?: boolean; className?: string }> = ({
     <div
       className={cx(
         "flex items-center justify-center size-8 shrink-0 rounded-full",
-        isUser ? "bg-gray-200 text-gray-700" : "bg-emerald-950",
+        isUser ? "bg-gray-200 text-gray-700" : "bg-gray-950",
         className,
       )}
     >
-      {isUser ? <IconUser size={20} /> : <UpstashLogo />}
+      {isUser ? <IconUser size={20} /> : <PhysLogo />}
     </div>
   );
 };

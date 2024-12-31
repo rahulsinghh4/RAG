@@ -9,19 +9,19 @@
   }
 
   a {
-    @apply text-emerald-700 underline
-        decoration-emerald-700/60 decoration-2
-        hover:decoration-emerald-700 hover:bg-emerald-200
-        outline-0 focus:ring-2 focus:ring-offset-1 focus:ring-emerald-500;
+    @apply text-amber-700 underline
+        decoration-amber-700/60 decoration-2
+        hover:decoration-amber-700 hover:bg-amber-200
+        outline-0 focus:ring-2 focus:ring-offset-1 focus:ring-amber-500;
   }
 
   ::selection {
-    @apply bg-emerald-200 text-emerald-950;
+    @apply bg-amber-200 text-amber-950;
   }
 
   button:focus,
   input:focus {
-    @apply outline-0 ring-2 ring-offset-1 ring-emerald-500 caret-emerald-500;
+    @apply outline-0 ring-2 ring-offset-1 ring-amber-500 caret-amber-500;
   }
 
   label,

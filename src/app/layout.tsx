@@ -6,6 +6,9 @@ import cx from "@/utils/cx";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.ico",
+  },
   title: "Physics RAG App",
   description: "Physics Research Paper Chat Bot",
 };
@@ -17,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth antialiased">
-      <body className={cx(inter.className, "text-sm md:text-base bg-white")}>
+      <body className={cx(inter.className, "text-sm md:text-base bg-zinc-800")}>
         {children}
       </body>
     </html>

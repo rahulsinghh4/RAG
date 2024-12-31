@@ -22,8 +22,9 @@ const Form = ({ inputProps, buttonProps, onSubmit }: Props, ref: any) => {
         {...inputProps}
         className={cx(
           "transition h-10 md:h-12 pl-4 pr-12 flex-1 rounded-xl",
-          "border border-gray-400 text-base",
-          "disabled:bg-gray-100",
+          "border border-zinc-400 bg-zinc-800 text-white text-base",
+          "disabled:bg-zinc-700",
+          "placeholder:text-zinc-400",
           inputProps.className,
         )}
         type="text"

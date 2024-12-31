@@ -1,8 +1,8 @@
 crawler:
   start_urls:
-    - https://bulletin.stanford.edu/departments/MECHENGR/courses
+    - https://arxiv.org/abs/2412.20356
   link_extractor:
-    allow: '.*bulletin\.stanford.*'
+    allow: '^https?:\/\/arxiv\.org\/abs\/\d{4}\.\d{4,5}$'
     deny:
       - "#"
       - '\?'

@@ -77,9 +77,9 @@ A chatbot for quickly interacting with some of the latest papers published in Ph
                 <button
                   key={message.content}
                   type="button"
-                  className="cursor-pointer select-none text-left bg-white font-normal
+                  className="cursor-pointer select-none text-left bg-zinc-800 text-zinc-50 font-normal
                   border border-gray-200 rounded-xl p-3 md:px-4 md:py-3
-                  hover:bg-zinc-50 hover:border-zinc-400"
+                  hover:bg-zinc-600 hover:border-zinc-400"
                   onClick={() => onClickQuestion(message.content)}
                 >
                   {message.content}
@@ -97,12 +97,12 @@ A chatbot for quickly interacting with some of the latest papers published in Ph
         className={cx(
           "fixed z-10 bottom-0 inset-x-0",
           "flex justify-center items-center",
-          "bg-white",
+          "bg-zinc-800",
         )}
       >
         <span
-          className="absolute bottom-full h-10 inset-x-0 from-white/0
-         bg-gradient-to-b to-white pointer-events-none"
+          className="absolute bottom-full h-10 inset-x-0 from-zinc-800/0
+         bg-gradient-to-w to-zinc-800 pointer-events-none"
         />
 
         <div className="w-full max-w-screen-md rounded-xl px-4 md:px-5 py-6">
