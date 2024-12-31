@@ -22,9 +22,9 @@ export default function Home() {
         {
           id: "0",
           role: "system",
-          content: `**Welcome to DegreeGuru**
+          content: `**Welcome to the Physics Research Paper RAG App**
 
-Your ultimate companion in navigating the academic landscape of Stanford.`,
+A chatbot for quickly interacting with some of the latest papers published in Physics from arxiv.org`,
         },
       ],
       onResponse: () => {
