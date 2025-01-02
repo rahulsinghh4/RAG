@@ -22,9 +22,9 @@ export default function Home() {
         {
           id: "0",
           role: "system",
-          content: `**Welcome to the Physics Research Paper RAG App**
+          content: `**Welcome to the Physics Scientific Literature RAG Web Chatbot**
 
-A chatbot for quickly interacting with some of the latest paper abstracts published in Physics from arxiv.org`,
+A Retrieval Augmented Generation (RAG) chatbot for quickly interacting with some of the latest paper titles, authors, and abstracts published in Physics from arxiv.org`,
         },
       ],
       onResponse: () => {

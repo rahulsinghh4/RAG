@@ -42,7 +42,7 @@ const Avatar: React.FC<{ isUser?: boolean; className?: string }> = ({
     <div
       className={cx(
         "flex items-center justify-center size-8 shrink-0 rounded-full",
-        isUser ? "bg-gray-200 text-gray-700" : "bg-gray-950",
+        isUser ? "bg-gray-200 text-zinc-50" : "bg-gray-950 text-zinc-50",
         className,
       )}
     >

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   title: "Physics RAG App",
-  description: "Physics Research Paper Chat Bot",
+  description: "Physics Scientific Literature Chat Bot",
 };
 
 export default function RootLayout({
@@ -20,7 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth antialiased">
-      <body className={cx(inter.className, "text-sm md:text-base bg-zinc-800")}>
+      <body
+        className={cx(
+          inter.className,
+          "text-sm md:text-base bg-zinc-800 text-zinc-50",
+        )}
+      >
         {children}
       </body>
     </html>

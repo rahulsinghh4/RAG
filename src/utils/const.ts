@@ -1,15 +1,18 @@
 export const INITIAL_QUESTIONS = [
   {
-    content: "Are there resources for students interested in creative writing?",
-  },
-  {
-    content: "Are there courses on environmental sustainability?",
+    content:
+      "What are some of the recent papers published from research at the Large Hadron Collider (LHC)?",
   },
   {
     content:
-      "Are there any workshops or seminars on entrepreneurship for students?",
+      "What is a research paper title and abstract for new research on Lie groups from arxiv.org?",
   },
   {
-    content: "What kinds of courses will I take as a philosophy major?",
+    content:
+      "Can you provide a summary of new research on the discrete dipole approximation?",
+  },
+  {
+    content:
+      "What are some new insights in the search for neutrinoless double beta decay?",
   },
 ];

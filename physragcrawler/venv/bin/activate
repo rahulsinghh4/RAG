@@ -42,8 +42,8 @@ _OLD_VIRTUAL_PATH="$PATH"
 PATH="$VIRTUAL_ENV/bin:$PATH"
 export PATH
 
-export UPSTASH_VECTOR_REST_URL="https://resolved-mallard-70745-us1-vector.upstash.io"
-export UPSTASH_VECTOR_REST_TOKEN="ABoFMHJlc29sdmVkLW1hbGxhcmQtNzA3NDUtdXMxYWRtaW5NR1JtTXpVMU1Ua3RNemMxWlMwMFkyUXlMVGt6TXpVdFpXVmpOekEzTlRBMk5qWXg="
+export UPSTASH_VECTOR_REST_URL="https://enough-crab-23968-us1-vector.upstash.io"
+export UPSTASH_VECTOR_REST_TOKEN="ABUFMGVub3VnaC1jcmFiLTIzOTY4LXVzMWFkbWluWmpFMllqWm1ZbVV0WW1JM09DMDBaR0ZoTFdJek9HUXROR1kwWldZd04yTm1Oemht"
 export OPENAI_API_KEY="***REMOVED***"
 
 # unset PYTHONHOME if set
