@@ -70,31 +70,32 @@ export async function POST(req: NextRequest) {
       .map(convertVercelMessageToLangChainMessage);
     const currentMessageContent = messages[messages.length - 1].content;
 
-    const chatModel = new ChatOpenAI({
-      modelName: "gpt-3.5-turbo-1106",
-      temperature: 0.2,
-      // IMPORTANT: Must "streaming: true" on OpenAI to enable final output streaming below.
-      streaming: true,
-    }, {
-      apiKey: process.env.OPENAI_API_KEY,
-      organization: process.env.OPENAI_ORGANIZATION
-    });
+    const chatModel = new ChatOpenAI(
+      {
+        modelName: "gpt-3.5-turbo-1106",
+        temperature: 0.2,
+        // IMPORTANT: Must "streaming: true" on OpenAI to enable final output streaming below.
+        streaming: true,
+      },
+      {
+        apiKey: process.env.OPENAI_API_KEY,
+        organization: process.env.OPENAI_ORGANIZATION,
+      },
+    );
 
     /**
      * Create vector store and retriever
      */
     const vectorstore = await new UpstashVectorStore(new OpenAIEmbeddings());
-    const retriever = vectorstore.asRetriever(
-      {
-        k: 6,
-        searchType: "mmr",
-        searchKwargs: {
-          fetchK: 20,
-          lambda: 0.5
-        },
-        verbose: false
+    const retriever = vectorstore.asRetriever({
+      k: 6,
+      searchType: "mmr",
+      searchKwargs: {
+        fetchK: 20,
+        lambda: 0.5,
       },
-    );
+      verbose: false,
+    });
 
     /**
      * Wrap the retriever in a tool to present it to the agent in a
@@ -115,7 +116,7 @@ export async function POST(req: NextRequest) {
      */
 
     const AGENT_SYSTEM_TEMPLATE = `
-    You are an artificial intelligence university bot named DegreeGuru, programmed to respond to inquiries about Stanford in a highly systematic and data-driven manner.
+    You are an artificial intelligence university bot named Physics_Pro, programmed to respond to inquiries about Stanford in a highly systematic and data-driven manner.
 
     Begin your answers with a formal greeting and sign off with a closing statement about promoting knowledge.
 

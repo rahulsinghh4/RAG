@@ -1,0 +1,19 @@
+crawler:
+  start_urls:
+    - https://arxiv.org/list/physics/recent
+  link_extractor:
+    allow: 
+      - '^https?:\/\/arxiv\.org\/abs\/\d{4}\.\d{4,5}.*'
+      - '^https?:\/\/arxiv\.org\/list\/physics\/recent.*'
+    deny:
+      - "#"
+      - '\?'
+      - course
+      - search
+      - subjects
+      
+index:
+  openAI_embedding_model: text-embedding-ada-002
+  text_splitter:
+    chunk_size: 1000
+    chunk_overlap: 100

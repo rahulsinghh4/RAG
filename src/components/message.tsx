@@ -19,7 +19,7 @@ const Message: React.FC<MessageProps> = ({ content, role }) => {
       <Markdown
         className={cx(
           "py-1.5 md:py-1 space-y-4",
-          isUser ? "font-semibold" : "",
+          isUser ? "font-semibold text-zinc-50" : "",
         )}
         options={{
           overrides: {

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  my_service:
+    image: physragcrawler
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - UPSTASH_VECTOR_REST_URL="https://resolved-mallard-70745-us1-vector.upstash.io"
+      - UPSTASH_VECTOR_REST_TOKEN="ABoFMHJlc29sdmVkLW1hbGxhcmQtNzA3NDUtdXMxYWRtaW5NR1JtTXpVMU1Ua3RNemMxWlMwMFkyUXlMVGt6TXpVdFpXVmpOekEzTlRBMk5qWXg="
+      - OPENAI_API_KEY="***REMOVED***"

@@ -24,7 +24,7 @@ export default function Home() {
           role: "system",
           content: `**Welcome to the Physics Research Paper RAG App**
 
-A chatbot for quickly interacting with some of the latest papers published in Physics from arxiv.org`,
+A chatbot for quickly interacting with some of the latest paper abstracts published in Physics from arxiv.org`,
         },
       ],
       onResponse: () => {
