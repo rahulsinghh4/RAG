@@ -14,7 +14,7 @@ const PoweredBy = () => {
         Vercel AI SDK
       </a>{" "}
       ・{" "}
-      <a href="https://github.com/upstash/DegreeGuru" target="_blank">
+      <a href="https://github.com/rahulsinghh4/RAG/" target="_blank">
         Source Code
       </a>
     </p>

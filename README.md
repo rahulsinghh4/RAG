@@ -6,7 +6,7 @@ This RAG (Retrieval Augmented Generation) Chatbot specializes in the summaries o
 
 Some features:
 
-- Large 560,300 paper vectorized dataset available for context (with the option to increase to 1.7 million by upgrading the Vector DB)
+- 560,300 Physics Paper vectorized dataset available for context (with the option to increase to 1.7 million by upgrading the Vector DB)
 - Multi-thread JSON data parsing and vectorizing
 - Fast answers using real-time text streaming from Vercel AI
 
@@ -15,11 +15,11 @@ This chatbot is trained on data from arxiv.org as an example, but is totally dom
 ## Overview
 
 1. [Stack](#stack)
-2. [Setup](#quickstart)
-   1. [Data Parser](#crawler)
-   2. [Front-end Chatbot](#chatbot)
+2. [Setup](#setup)
+   1. [Data Parser](#step%201:%20data%20parser)
+   2. [Front-end Chatbot](#step%202:%20chatbot)
 3. [Future Changes](#Future%20Changes)
-4. [Sample Q&A](#conclusion)
+4. [Sample Q&A](#sample%20Q&A)
 
 ## Stack
 
@@ -38,7 +38,7 @@ This chatbot is trained on data from arxiv.org as an example, but is totally dom
 For local development, you can clone this repository by running the following:
 
 ```
-git clone git@github.com:[YOUR_GITHUB_ACCOUNT]/DegreeGuru.git
+git clone https://github.com/rahulsinghh4/RAG.git
 ```
 
 This project contains two primary components: the data parser and the chatbot.
@@ -51,7 +51,7 @@ My first attempt to pull data was using a web crawler based on scrapy. Scrapy wa
 
 Another issue with using the crawler was that the arxiv.org website has a robots.txt file that limits scrapes to occur only in 15 second intervals. Collecting the data on the scale which was eventually used would have taken roughly 295 days at this rate. An alternative was to use the arxiv API to load the papers‘ abstract data, but this API also had a rate limiter that limited requests to occur at max every 3 seconds. This would result in a roughly two month turnaround for collecting the data
 
-After this research, I ended up scrapping the crawler program and instead found a dataset from Kaggle sourced directly from Arxiv that provided roughly 1.7 million JSON objects that included all the relevant details about each paper. This dataset is updated roughly every week, so one drawback is that it won’t contain the latest Physics papers published.
+After this research, I ended up scrapping the crawler program and instead found a dataset from Kaggle sourced directly from ArXiv that provided roughly 1.7 million JSON objects that included all the relevant details about each paper. This dataset is updated roughly every week, so one drawback is that it won’t contain the latest Physics papers published.
 
 This dataset was then downloaded and parsed in Python to convert the JSON objects into strings of length 1000 with a 100 character overlap in between strings. I chose Python due to the ease of development and the large libraries of code available for parsing JSON.
 
