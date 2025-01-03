@@ -38,13 +38,9 @@ yarn-error.log*
 next-env.d.ts
 
 # large data JSON file
-physragcrawler/physragcrawler/utils/metadata-oai-snapshot.json
 
 # venv
 physragcrawler/venv
 __pycache__/
 *.pyc
 
-# temp
-physragcrawler
-physragcrawler/venv/
