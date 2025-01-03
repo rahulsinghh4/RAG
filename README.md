@@ -4,17 +4,17 @@ This RAG (Retrieval Augmented Generation) Chatbot specializes in the summaries o
 
 Some features:
 
-- Training on a large 1.7 million paper dataset
+- Large 560,300 paper vectorized dataset available for context (with the option to increase to 1.7 million by upgrading the Vector DB)
 - Multi-thread JSON data parsing and vectorizing
-- Fast answers using real-time text streaming
+- Fast answers using real-time text streaming from Vercel AI
 
 This chatbot is trained on data from arxiv.org as an example, but is totally domain agnostic. This project can be modified to run on any dataset either by modifying the built-in crawler or by uploading an alternative JSON dataset and then updating the LLM query template in route.tsx
 
 ## Overview
 
 1. [Stack](#stack)
-2. [Quickstart](#quickstart)
-   1. [Dataset](#crawler)
+2. [Setup](#quickstart)
+   1. [Data Parser](#crawler)
    2. [Front-end Chatbot](#chatbot)
 3. [Future Changes](#Future%20Changes)
 4. [Sample Q&A](#conclusion)
@@ -31,7 +31,7 @@ This chatbot is trained on data from arxiv.org as an example, but is totally dom
 - Rate Limiting: [Upstash](https://upstash.com/)
 - Crawler (not used in final product): [scrapy](https://scrapy.org/)
 
-## Quickstart
+## Setup
 
 For local development, you can clone this repository by running the following:
 
@@ -41,11 +41,11 @@ git clone git@github.com:[YOUR_GITHUB_ACCOUNT]/DegreeGuru.git
 
 This project contains two primary components: the data parser and the chatbot.
 
-## Step 1: Dataset
+## Step 1: Data Parser
 
 ### Overview
 
-My first attempt to pull data was using a web crawler based on scrapy. After running the crawler on a trial test with a depth limit of 10 sites, the data that was vectorized was almost entirely unusable, as very little relevant information was actually gathered. In theory the scraper could have been customized to only pull the paper abstract data, but this customization would likely have taken significantly more time due to the difficulty of parsing HTML.
+My first attempt to pull data was using a web crawler based on scrapy. Scrapy was chosen due to my familiarity in Python, and scrapy is the most used crawler. After running the crawler on a trial test with a depth limit of 10 sites, the data that was vectorized was almost entirely unusable, as very little relevant information was actually gathered. In theory the scraper could have been customized to only pull the paper abstract data, but this customization would likely have taken significantly more time due to the difficulty of parsing HTML.
 
 Another issue with using the crawler was that the arxiv.org website has a robots.txt file that limits scrapes to occur only in 15 second intervals. Collecting the data on the scale which was eventually used would have taken roughly 295 days at this rate. An alternative was to use the arxiv API to load the papers‘ abstract data, but this API also had a rate limiter that limited requests to occur at max every 3 seconds. This would result in a roughly two month turnaround for collecting the data
 
@@ -55,7 +55,7 @@ This dataset was then downloaded and parsed in Python to convert the JSON object
 
 The data from the JSON objects in string form was then fed into OpenAI‘s embedding model text-embedding-ada-002, which provided a vectorized form of the data to use for similarity comparisons with the user input later. This specific model was chosen for embeddings, because it has a dimensionality of 1536 for its vector outputs, which corresponds to the limit on Upstash for its vector DB. Open AI‘s models are also very well-documented with plenty of examples to reference if any issues arise.
 
-Finally, the text and vector data combined was uploaded to a vector database on Upstash, with a total of 1.3 million vectors stored, corresponding to approximately 800,000 papers.
+Finally, the text and vector data combined was uploaded to a vector database on Upstash, with a total of 900 thousand vectors stored, corresponding to approximately 560,000 papers.
 
 I used Upstash for the vector database due to the simplicity of their APIs and the fact that they offer in-built vector similarity search operations that allow for easy search for relevant embeddings. One drawback of Upstash is the relatively limited docs available for errors and debugging — some of their old features (such as using an external embedding model like I did) are deprecated and it’s hard to find any documentation for the error codes. This resulted in a higher debugging time. Ultimately, their discord support channel contained an old thread that mentioned a workaround to the problem I was experiencing with their API.
 
@@ -134,7 +134,7 @@ python3 parse_and_upload.py
 
 ### Overview
 
-The chatbot was created using Next.js based on another open-source model. I chose Next.js due to prior experience with the framework when building my own website and due to the relevancy of the framework for modern web apps. I also already had the necessary libraries installed on my computer. The key features involved here were text streaming and rate limiting. Text streaming was achieved using Vercel AI in order for the user to see partial responses appear before they completed. This enhances user experience by allowing the user to start reading the response almost instantly.
+The chatbot was created using Next.js based on another open-source model. I chose Next.js due to prior experience with the framework when building my own website and due to the relevancy of the framework for modern web apps. I also already had the necessary libraries installed on my computer. The key features involved here were text streaming and rate limiting. Text streaming was achieved using Vercel AI in order for the user to see partial responses appear before they completed. This enhances user experience by allowing the user to start reading the response almost instantly. I used the LangChain framework for the LLM orchestration, as it comes pre-built with many of the features I was looking to use in my RAG app, such as the OpenAI API, the Vector DB, and native RAG workflows for context-retrieval. The LLM powering the front-end is gpt-3.5-turbo-1106. This was used as it was the model linked to an older LangChain project I used as a template, but in retrospect I would instead use gpt-4o-mini, as it has a larger context window (128,000 tokens) and a larger output token size (16,384). Changing the model is as simple as respecifying the model when calling the OpenAI() function.
 
 The app was then hosted on Vercel, which was chosen for quick deployment and is a standard for RAG apps when I was researching for the project.
 ![chatbot-diagram](figs/infrastructure.png)
