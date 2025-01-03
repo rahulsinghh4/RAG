@@ -132,6 +132,9 @@ To run the data parser (and vectorizer), run the following command from the phys
 python3 parse_and_upload.py
 ```
 
+![parser-output](figs/sample_output_from_data_processing.png)
+![openai-usage](figs/OpenAI_API_Sample_Usage.png)
+
 ## Step 2: Chatbot
 
 ### Overview
@@ -139,7 +142,6 @@ python3 parse_and_upload.py
 The chatbot was created using Next.js based on another open-source model. I chose Next.js due to prior experience with the framework when building my own website and due to the relevancy of the framework for modern web apps. I also already had the necessary libraries installed on my computer. The key features involved here were text streaming and rate limiting. Text streaming was achieved using Vercel AI in order for the user to see partial responses appear before they completed. This enhances user experience by allowing the user to start reading the response almost instantly. I used the LangChain framework for the LLM orchestration, as it comes pre-built with many of the features I was looking to use in my RAG app, such as the OpenAI API, the Vector DB, and native RAG workflows for context-retrieval. The LLM powering the front-end is gpt-3.5-turbo-1106. This was used as it was the model linked to an older LangChain project I used as a template, but in retrospect I would instead use gpt-4o-mini, as it has a larger context window (128,000 tokens) and a larger output token size (16,384). Changing the model is as simple as respecifying the model when calling the OpenAI() function.
 
 The app was then hosted on Vercel, which was chosen for quick deployment and is a standard for RAG apps when I was researching for the project.
-![chatbot-diagram](figs/infrastructure.png)
 
 ### Environment Variables
 
