@@ -53,7 +53,7 @@ This project contains two primary components: the data parser and the chatbot.
 
 ### Overview
 
-My first attempt to pull data was using a web crawler based on scrapy. Scrapy was chosen due to my familiarity in Python, and scrapy is the most used crawler. After running the crawler on a trial test with a depth limit of 10 sites, the data that was vectorized was almost entirely unusable, as very little relevant information was actually gathered. In theory the scraper could have been customized to only pull the paper abstract data, but this customization would likely have taken significantly more time due to the difficulty of parsing HTML.
+My first attempt to pull data was using a web crawler based on scrapy. Scrapy was chosen due to my familiarity with Python, and scrapy is the most used crawler. After running the crawler on a trial test with a depth limit of 10 sites, the data that was vectorized was almost entirely unusable, as very little relevant information was actually gathered. In theory the scraper could have been customized to only pull the paper abstract data, but this customization would likely have taken significantly more time due to the difficulty of parsing HTML.
 
 Another issue with using the crawler was that the arxiv.org website has a robots.txt file that limits scrapes to occur only in 15 second intervals. Collecting the data on the scale which was eventually used would have taken roughly 295 days at this rate. An alternative was to use the arxiv API to load the papers‘ abstract data, but this API also had a rate limiter that limited requests to occur at max every 3 seconds. This would result in a roughly two month turnaround for collecting the data
 
