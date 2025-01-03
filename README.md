@@ -33,6 +33,10 @@ This chatbot is trained on data from arxiv.org as an example, but is totally dom
 - Rate Limiting: [Upstash](https://upstash.com/)
 - Crawler (not used in final product): [scrapy](https://scrapy.org/)
 
+### Tech Stack Overview & Interactions:
+
+![overview-diagram](figs/overview_diagram.jpg)
+
 ## Setup
 
 For local development, you can clone this repository by running the following:
@@ -68,6 +72,10 @@ Batching was also used to optimize the vector upserts, so that the program was n
 Parsing, vectorizing, and uploading the data took the program roughly 16 hours (running in the background).
 
 The OpenAI API key and the Upstash Vector DB URL and Token were stored in the Python venv activate file as environment variables for security.
+
+### Data Parsing Diagram
+
+![data-diagram](figs/data_diagram.jpg)
 
 ### Configure Environment Variables
 
