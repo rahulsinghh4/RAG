@@ -65,7 +65,7 @@ In order to address rate limits with OpenAI‘s embedding model, a token countin
 
 Batching was also used to optimize the vector upserts, so that the program was not dependent on the entire dataset being parsed, vectorized, and uploaded. This allowed for a partial dataset to be able to be used in the end due to various API limits.
 
-Parsing, vectorizing, and uploading the data took the program roughly 24 hours (running in the background).
+Parsing, vectorizing, and uploading the data took the program roughly 16 hours (running in the background).
 
 The OpenAI API key and the Upstash Vector DB URL and Token were stored in the Python venv activate file as environment variables for security.
 
