@@ -124,7 +124,7 @@ export OPENAI_API_KEY="your_open_ai_api_key"
 
 ### Download dataset
 
-Download the data from https://www.kaggle.com/datasets/Cornell-University/arxiv/data and add it to the physragcrawler/physragcrawler/utils directory.
+Download the data from `https://www.kaggle.com/datasets/Cornell-University/arxiv/data` and add it to the physragcrawler/physragcrawler/utils directory.
 
 To run the data parser (and vectorizer), run the following command from the physragcrawler/physragcrawler/utils directory:
 
@@ -132,7 +132,12 @@ To run the data parser (and vectorizer), run the following command from the phys
 python3 parse_and_upload.py
 ```
 
+#### Sample Program output
+
 ![parser-output](figs/sample_output_from_data_processing.png)
+
+#### Sample API Usage Stats
+
 ![openai-usage](figs/OpenAI_API_Sample_Usage.png)
 
 ## Step 2: Chatbot
@@ -183,7 +188,7 @@ To customize the chatbot further, you can update the AGENT_SYSTEM_TEMPLATE in th
 
 ### Deployment
 
-Visit vercel.com and follow the steps there to deploy a production version of the webapp!
+Visit `vercel.com` and follow the steps there to deploy a production version of the webapp!
 
 ## Debugging:
 
