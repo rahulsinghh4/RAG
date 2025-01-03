@@ -16,10 +16,10 @@ This chatbot is trained on data from arxiv.org as an example, but is totally dom
 
 1. [Stack](#stack)
 2. [Setup](#setup)
-   1. [Data Parser](#step%201:%20data%20parser)
-   2. [Front-end Chatbot](#step%202:%20chatbot)
-3. [Future Changes](#Future%20Changes)
-4. [Sample Q&A](#sample%20Q&A)
+   1. [Data Parser](#step-1-data-parser)
+   2. [Front-end Chatbot](#step-2-chatbot)
+3. [Future Changes](#future-changes)
+4. [Sample Q&A](#sample-qa)
 
 ## Stack
 
