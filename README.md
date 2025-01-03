@@ -134,7 +134,7 @@ export OPENAI_API_KEY="your_open_ai_api_key"
 
 ### Download dataset
 
-Download the data from `https://www.kaggle.com/datasets/Cornell-University/arxiv/data` and add it to the physragcrawler/physragcrawler/utils directory.
+Download the data from https://www.kaggle.com/datasets/Cornell-University/arxiv/data and add it to the physragcrawler/physragcrawler/utils directory.
 
 To run the data parser (and vectorizer), run the following command from the physragcrawler/physragcrawler/utils directory:
 
