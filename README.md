@@ -12,6 +12,8 @@ Some features:
 
 This chatbot is trained on data from arxiv.org as an example, but is totally domain agnostic. This project can be modified to run on any dataset either by modifying the built-in crawler or by uploading an alternative JSON dataset and then updating the LLM query template in route.tsx
 
+This project was inspired by the following research paper from Lawrence Berkeley: `https://arxiv.org/pdf/2408.09574v1`
+
 ## Overview
 
 1. [Stack](#stack)
