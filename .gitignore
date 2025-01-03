@@ -28,6 +28,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env*.local.example
 
 # vercel
 .vercel
@@ -41,6 +42,8 @@ physragcrawler/physragcrawler/utils/metadata-oai-snapshot.json
 
 # venv
 physragcrawler/venv
+__pycache__/
+*.pyc
 
 # temp
 physragcrawler
