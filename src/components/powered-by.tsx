@@ -6,12 +6,12 @@ const PoweredBy = () => {
         LangChain
       </a>
       ,{" "}
-      <a href="https://upstash.com" target="_blank">
-        Upstash Vector
-      </a>{" "}
-      and{" "}
       <a href="https://sdk.vercel.ai" target="_blank">
         Vercel AI SDK
+      </a>{" "}
+      and{" "}
+      <a href="https://upstash.com" target="_blank">
+        Upstash Vector
       </a>{" "}
       ・{" "}
       <a href="https://github.com/rahulsinghh4/RAG/" target="_blank">
