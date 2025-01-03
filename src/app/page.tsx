@@ -24,7 +24,7 @@ export default function Home() {
           role: "system",
           content: `**Welcome to the Physics Scientific Literature RAG Web Chatbot**
 
-A Retrieval Augmented Generation (RAG) chatbot for quickly interacting with some of the latest paper titles, authors, and abstracts published in Physics from arxiv.org`,
+A Retrieval-Augmented Generation (RAG) chatbot for quickly interacting with some of the latest paper titles, authors, and abstracts published in Physics from arxiv.org`,
         },
       ],
       onResponse: () => {
