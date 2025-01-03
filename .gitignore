@@ -44,6 +44,3 @@ physragcrawler/venv
 __pycache__/
 *.pyc
 
-# Juytper Notebook for rendering Markdown preview
-README.ipynb
-.ipynb_checkpoints
