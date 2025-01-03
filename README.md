@@ -1,5 +1,7 @@
 # Physics Scientific Literature RAG Chatbot
 
+Try out the application here!: https://physicsragchatbot.vercel.app/
+
 This RAG (Retrieval Augmented Generation) Chatbot specializes in the summaries of a large dataset of Physics Scientific Literature pulled from arxiv.org. The web chatbot can answer questions covering the following information from the papers: title, abstract, author(s), publication date, and other more specific details. The RAG app works by vectorizing the user text input and using a Euclidean similarity comparison to find relevant pieces of data in the Vector DB. The user input and the relevant context pulled from the DB are then combined and fed into the LLM to provide a response to the user.
 
 Some features:
@@ -22,7 +24,7 @@ This chatbot is trained on data from arxiv.org as an example, but is totally dom
 ## Stack
 
 - LLM Orchestration: [Langchain.js](https://js.langchain.com)
-- Text Streaming & Hosting: [Vercel AI](https://vercel.com/ai)
+- Text Streaming & Deployment: [Vercel AI](https://vercel.com/ai)
 - Embedding Model: [OpenAI](https://openai.com/), [text-embedding-ada-002](https://platform.openai.com/docs/guides/embeddings)
 - Generative Model: [OpenAI](https://openai.com/), [gpt-3.5-turbo-1106](https://platform.openai.com/docs/models)
 - Web Chatbot: [Next.js](https://nextjs.org/)
@@ -176,6 +178,10 @@ Visit `http://localhost:3000` to see the chatbot live.
 To customize the chatbot further, you can update the AGENT_SYSTEM_TEMPLATE in the route.tsx file to match a different use case.
 
 </br>
+
+### Deployment
+
+Visit vercel.com and follow the steps there to deploy a production version of the webapp!
 
 ## Debugging:
 
